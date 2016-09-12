@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+
+    <link href="vendor/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom Less -->
+    <link href="css/app.less" rel="stylesheet/less">
+
+    <script src="vendor/less.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid navpanel">
+
+    <nav class="navbar navbar-default main-menu">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav menu">
+                    <li class="dropdown">
+                        <a href="#" id="head" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DAS</a>
+                        <ul class="dropdown-menu">
+                            <li><a id="hist" class="link" href="#">history</a></li>
+                            <li><a id="goal"  href="#">goals</a></li>
+                            <li><a id="achiv" href="#">achievements</a></li>
+                            <li><a id="manag" href="#">management</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tools" role="button" aria-haspopup="true" aria-expanded="false">Products & decision</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">comparing</a></li>
+                            <li><a href="#">scoring</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">support & consulting </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Consulting</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"  role="button" aria-haspopup="true" aria-expanded="false">contacts </a>
+
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="fac"><img class="icons img-rounded" src="img/fb.png" alt=""></a></li>
+                    <li><a href=""><img class="icons img-rounded" src="img/tw.png" alt=""></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+    <article>
+    </article>
+
+
+
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+
+            <!-- Carousel items -->
+                <div class="carousel-inner" >
+
+                <div class="active item"><img src="img/img1.jpg" alt="research"></div>
+                <div class="item"><img src="img/img2.jpg" class="img-rounded"  alt="analisys"></div>
+                <div class="item"><img src="img/img3.jpg" class="img-rounded" alt="decision"></div>
+                <div class="item"><img src="img/img4.jpg" class="img-rounded" alt="success"></div>
+
+            </div>
+            <!--Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+    </div>
+
+    <div class="text"></div>
+
+</div>
+
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+
+<script>
+    (function($, undefined) {
+
+        var textArr=['research', 'analisys','decision', 'success'];
+
+        $('.text').append('<p/>');
+        $('.text p').last().text('research');
+
+                $('#myCarousel').carousel({wrap:false});
+
+                $("#myCarousel").on(
+                        'slide.bs.carousel', function ()
+                        {
+                            if ($('.text p').length<4)
+                            {
+
+                                $('.text').append('<p/>');
+                                var n = $('.active').index() + 1;
+
+                                var str = textArr[n];
+                                var h = $('.text p').last();
+                                h.text(str);
+                            }
+
+                            });
+
+
+
+
+            $('.menu > li').hover(function () {
+
+                clearTimeout($.data(this,'timer'));
+
+                $('ul',this).stop(true,true).slideDown(400);
+
+            },
+                    function () {
+
+                        $.data(this, 'timer', setTimeout($.proxy(function ()
+                        {
+                            $('ul', this).stop(true, true).slideUp(400);
+                        }, this), 100));
+
+                    }
+
+            )
+
+
+        $('article').hide();
+        $('article').load('history.html').fadeIn('slow');
+
+
+
+
+        $('#hist').click(function () {
+            $('.new').remove();
+            $('#myCarousel').show();
+            $('article').empty();
+            $('article').load('history.html').fadeIn('slow');
+            return false;
+        });
+
+        $('#goal').click(function () {
+            $('.new').remove();
+            $('#myCarousel').show();
+            $('article').empty();
+            $('article').load('goals.html');
+            return false;
+                });
+
+
+        $('#achiv').click(function () {
+            $('.new').remove();
+            $('#myCarousel').show();
+            $('article').empty();
+            $('article').load('achievments.html');
+            return false;
+        });
+
+
+        $('#manag').click(function () {
+            $('.new').remove();
+            $('#myCarousel').hide();
+            $('.text').hide();
+            $('article').hide();
+
+            var $d = $('<div/>').addClass('new').appendTo('body');
+         //   $d.css(position:absolute);
+            $d.load('management.html');
+
+            return false;
+        });
+
+
+
+
+
+
+    })(jQuery);
+
+</script>
+
+</body>
+</html>

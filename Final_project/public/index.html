@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Content</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom Less -->
+    <link href="css/app.less" rel="stylesheet/less">
+    <script src="vendor/less.min.js"></script>
+
+    <!-- Custom Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+
+<body>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">Welcome to DAS tool</h4>
+                <p>Please, insert number and weight of criterias</p>
+            </div>
+            <div class="modal-body">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="main partOne col-xs-4"></div>
+            <div class="block">
+                <select name="" id="">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                </select>
+            </div>
+
+
+    </div>
+</div>
+
+
+<div class="btn-group">
+    <button class="btn btn-success" id="btn1">+ criteria</button>
+    <button class="btn btn-danger" id="btn2">- criteria</button>
+</div>
+
+
+
+
+
+    <script src="vendor/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap.min.js"></script>
+
+
+
+
+    <script>
+
+
+        (function($, undefined) {
+
+
+
+
+
+                    $( document ).ready(function()
+                        {
+                            $('#myModal').modal();
+                            $('.partOne').append("<div class='block'></div>");
+                        }
+                )
+
+                $("#btn1").click(function () {
+
+
+                    if ($('.criteria').length<5) {
+
+                        $('.block').append("<div class='criteria'></div>");
+
+
+                        $('<input type="text" class="field" name="dynamic[]" placeholder="input the criteria"  />').fadeIn('slow').appendTo('.criteria').last();//добавляем текстовое поле
+
+
+                        $('.criteria').last().fadeIn('slow').append('<select name="evaluation" ></select>');//добавляем выпадающий список
+
+
+                        var $select = $('.criteria select[name=evaluation]').last();//задаем выпадающему списку переменную
+                        for (j = 1; j < 6; j++) {
+                            $select.fadeIn('slow').append('<option> ' + j + ' </option>');
+                        } //добавляем 5 пунктов в выпадающий список
+                    }
+                    else {alert('You can insert 5 criterias only!')}
+                    })
+
+            $("#btn2").click(function () {
+
+                $('.criteria:last').remove();
+
+            })
+
+
+
+            var arr= $('.block').serialize();
+            })(jQuery);
+
+
+</script>
+    <!-- jQuery -->
+
+
+</body>
+
+</html>
