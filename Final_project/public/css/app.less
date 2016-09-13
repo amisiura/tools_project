@@ -103,20 +103,30 @@ body{
 
 
 .block{
-  margin-left:50px;
-  margin-top:50px;
+  margin-left:5px;
+  margin-top:5px;
   border: 3px solid darken(@firstColor,20%);
   border-radius: 6px;
   float: left;
   padding: 3px;
-  & .eval{
-    border: 1px dashed @border;
-    padding: 3px;
-    font-size: 12px;
+  padding-top: 5px;
+  width: 100%;
+  font-size: 12px;
+    & .criteria{
+      width: 50%;
+      float: left;
+      margin: 0;
+      margin-right: 15px;
+    }
+    & .eval{
+      float: left;
+      width: 45%;
+      margin: 0;
   }
-  & .eval:first-child{
-    margin-bottom: 3px;
-  }
+    .weight{
+      float: left;
+      margin-top: 0;
+    }
 }
 
 .main-menu{
