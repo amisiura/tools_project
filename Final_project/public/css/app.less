@@ -105,10 +105,13 @@ body{
 .block{
   margin-left:5px;
   margin-top:5px;
+  margin-bottom: 10px;
   border: 3px solid darken(@firstColor,20%);
+  box-shadow: @bigShadow;
   border-radius: 6px;
   float: left;
   padding: 3px;
+  padding-left: 10px;
   padding-top: 5px;
   width: 100%;
   font-size: 12px;
@@ -129,6 +132,18 @@ body{
     }
 }
 
+.buttons {
+  float: left;
+  position: absolute;
+  margin-top:5px;
+  padding: 5px;
+  box-shadow: @smallShadow;
+  &.btn{
+    margin: 15px !important;
+    float: left;
+
+  }
+}
 .main-menu{
   background-color: lighten(@secondColor,5%);
   border: 2px solid darken(@firstColor,20%);

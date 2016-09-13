@@ -92,14 +92,16 @@
             </div>
 
         </div>
+
+        <div class="btn-group buttons col-xs-2">
+            <button class="btn btn-success btn-small" id="btn1">+</button>
+            <button class="btn btn-danger btn-small " id="btn2">-</button>
+        </div>
+
     </div>
 </div>
 
 
-<div class="btn-group">
-    <button class="btn btn-success" id="btn1">+ criteria</button>
-    <button class="btn btn-danger" id="btn2">- criteria</button>
-</div>
 
 
 
@@ -133,19 +135,7 @@
 
                     if ($('.criteria').length<5) {
 
-                        $('.block').append("<div class='criteria'></div>");
-
-
-                        $('<input type="text" class="field" name="dynamic[]" placeholder="input the criteria"  />').fadeIn('slow').appendTo('.criteria').last();//добавляем текстовое поле
-
-
-                        $('.criteria').last().fadeIn('slow').append('<select name="evaluation" ></select>');//добавляем выпадающий список
-
-
-                        var $select = $('.criteria select[name=evaluation]').last();//задаем выпадающему списку переменную
-                        for (j = 1; j < 6; j++) {
-                            $select.fadeIn('slow').append('<option> ' + j + ' </option>');
-                        } //добавляем 5 пунктов в выпадающий список
+                        $( ".block" ).last().clone().prependTo( ".partOne" );
                     }
                     else {alert('You can insert 5 criterias only!')}
                     })
