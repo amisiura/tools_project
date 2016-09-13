@@ -1,6 +1,9 @@
 @firstColor:rgb(195,185,185);
 @secondColor:rgb(202,202,202);
-@w:25%;
+@bigShadow:0 0 10px darken(@firstColor, 80%);
+@smallShadow:0 0 5px darken(@firstColor, 30%);;
+@border: darken(@firstColor,20%);
+
 .button{
 
   color: darken(@secondColor,55%);
@@ -25,14 +28,7 @@ body{
     & .field, select{
       border-radius: 7px;
     }
-    .block{
-      box-shadow: 0 0 10px rgba(225,225,225,0.5);
-      & p{
-        font-weight:bold;
-        font-size: 44px;
 
-      }
-    }
   }
 
 
@@ -112,6 +108,11 @@ body{
   border: 3px solid darken(@firstColor,20%);
   border-radius: 6px;
   float: left;
+  padding: 10px;
+  & .eval{
+    border: 1px dashed @border;
+    padding: 10px;
+  }
 }
 
 .main-menu{

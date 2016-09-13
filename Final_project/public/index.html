@@ -62,13 +62,24 @@
     <div class="row">
         <div class="main partOne col-xs-4"></div>
             <div class="block">
-                <select name="" id="">
-                    <option value="1"></option>
-                    <option value="2"></option>
-                    <option value="3"></option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                </select>
+                <div class="eval">
+                    <p><b>Your evaluation</b></p>
+                    <label class="radio-inline"><input name="ball" type="radio" value="5">Perfect</label>
+                    <label class="radio-inline"><input name="ball" type="radio" value="4">Very good</label>
+                    <label class="radio-inline"><input name="ball" type="radio" value="3">Good</label>
+                    <label class="radio-inline"><input name="ball" type="radio" value="2">Not good</label>
+                    <label class="radio-inline"><input name="ball" type="radio" value="1">Awful</label>
+                </div>
+
+
+                <div class="eval">
+                    <p><b>Enter weight of criteria</b></p>
+                    <label class="radio-inline"><input name="weight" type="radio" value="3"> Very important</label>
+                    <label class="radio-inline"><input name="weight" type="radio" value="2">Important</label>
+                    <label class="radio-inline"><input name="weight" type="radio" value="1"> Not important</label>
+                </div>
+
+
             </div>
 
 
@@ -104,8 +115,7 @@
 
                     $( document ).ready(function()
                         {
-                            $('#myModal').modal();
-                            $('.partOne').append("<div class='block'></div>");
+                         //   $('#myModal').modal();
                         }
                 )
 
