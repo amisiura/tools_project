@@ -130,15 +130,26 @@
                         }
                 )
 
-                $("#btn1").click(function () {
+                $("#btn1").on('click',function () {
 
 
                     if ($('.block').length<5) {
 
-                        var $b =$(".block" ).last().clone();
-                        $b.
+                        var $b = $('.block')
+                                .last()
+                                .clone()
+                                .addClass('block' + ($('.block').length-1));
 
-                        appendTo(".partOne" );
+                        var $r=$b
+                                .find('.radio-inline>input')
+                                .attr("name",'weight' + ($('.block').length-1));
+
+
+                        $b.find('.radio-inline>input').replaceWith($r);
+                        $b.appendTo('.partOne');
+
+
+
                     }
                     else {alert('You can insert 5 criterias only!')}
                     })
