@@ -95,8 +95,8 @@
 
         <div class="btn-group buttons col-xs-2">
             <button class="btn btn-success btn-small" id="btn1">+</button>
-            <button class="btn btn-danger btn-small " id="btn2">-</button>
-            <button class="btn btn-primary btn-small " id="btn3">Add object</button>
+            <button class="btn btn-danger btn-small" id="btn2">-</button>
+            <button class="btn btn-primary btn-small" id="btn3">Add object</button>
         </div>
 
     </div>
@@ -174,17 +174,29 @@
 
                         var $p = $('.main')
                                 .clone()
-                                .addClass('partTwo main col-xs-4')
-                                .removeClass('partOne');
+                                .removeClass('partOne')
+                                .addClass('partTwo main col-xs-4');
 
                          $p
-                                 .find('.radio-inline>input')
-                                .attr("name",'weight'+$('.partTwo .block').length + 2);
+                                 .find('.block .radio-inline>input').each(function (i, elem) {
+                             var n = 0;
+                             if (i < 3)
+                             {n=0}
+                             else if (i<6)
+                             {n=1}
+                             else if (i<9)
+                             {n=2}
+                             else if (i<12)
+                             {n=3}
+
+
+                                $(this).attr("name","weight" + 2+n);
 
 
                         //$p.find('.radio-inline>input').replaceWith($rr);
 
                         $p.appendTo('.row');
+                         })
                     }
 
             })
