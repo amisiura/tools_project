@@ -96,6 +96,7 @@
         <div class="btn-group buttons col-xs-2">
             <button class="btn btn-success btn-small" id="btn1">+</button>
             <button class="btn btn-danger btn-small " id="btn2">-</button>
+            <button class="btn btn-primary btn-small " id="btn3">Add object</button>
         </div>
 
     </div>
@@ -133,9 +134,9 @@
                 $("#btn1").on('click',function () {
 
 
-                    if ($('.block').length<5) {
+                    if ($('.partOne .block').length<5) {
 
-                        var $b = $('.block')
+                        var $b = $('.partOne .block')
                                 .last()
                                 .clone()
                                 .addClass('block' + ($('.block').length-1));
@@ -147,16 +148,44 @@
 
                         $b.find('.radio-inline>input').replaceWith($r);
                         $b.appendTo('.partOne');
-
-
-
                     }
-                    else {alert('You can insert 5 criterias only!')}
+
                     })
 
-            $("#btn2").click(function () {
+            $("#btn2").on('click',function () {
+                if ($('.partOne .block').length>1) {
+                    $('.partOne .block:last').remove();
+                    $('.partTwo .block:last').remove();
 
-                $('.criteria:last').remove();
+                }
+
+            })
+
+
+            $("#btn3").on('click',function () {
+
+                if ($('.partTwo').length==1)
+                    {
+                        $('.partTwo').remove();
+                        //$('.main:last').remove();
+
+                    }
+                    if ($('.main').length<2) {
+
+                        var $p = $('.main')
+                                .clone()
+                                .addClass('partTwo main col-xs-4')
+                                .removeClass('partOne');
+
+                         $p
+                                 .find('.radio-inline>input')
+                                .attr("name",'weight'+$('.partTwo .block').length + 2);
+
+
+                        //$p.find('.radio-inline>input').replaceWith($rr);
+
+                        $p.appendTo('.row');
+                    }
 
             })
 
