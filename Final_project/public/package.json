@@ -1,0 +1,32 @@
+{
+  "man": {
+      "1":"look",
+      "2":"body",
+      "3":"attraction",
+      "4":"sexual",
+      "5":"intelligence"
+  },
+  "woman": {
+    "1":"look",
+    "2":"prettiness",
+    "3":"stature",
+    "4":"voice",
+    "5":"sexual"
+  },
+  "hotel": {
+    "1":"comfort",
+    "2":"interior",
+    "3":"location",
+    "4":"service",
+    "5":"accomodation"
+  },
+  "car": {
+    "1":"exterior",
+    "2":"interior",
+    "3":"powerful",
+    "4":"price",
+    "5":"functionality"
+  }
+
+
+}

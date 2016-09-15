@@ -13,23 +13,11 @@
 }
 
 body{
-  background-image: linear-gradient(-90deg, @firstColor, @secondColor);
+    background: linear-gradient(90deg, darken(@secondColor,10%), darken(@secondColor,5%)),
+                linear-gradient(0deg, @firstColor, @secondColor,);
+    //background-image: url(../img/opto.png);
 
-  & form{
-    display: block;
 
-    height:200px;
-    width: 100%;
-  }
-  & .criteria{
-    display: block;
-    margin: 10px;
-
-    & .field, select{
-      border-radius: 7px;
-    }
-
-  }
 
 
   & footer {
@@ -106,25 +94,29 @@ body{
   margin-left:5px;
   margin-top:5px;
   margin-bottom: 10px;
-  border: 3px solid darken(@firstColor,20%);
+  border: 2px solid darken(@firstColor,20%);
   box-shadow: @bigShadow;
-  border-radius: 6px;
+  border-radius: 3px;
   float: left;
   padding: 3px;
   padding-left: 10px;
   padding-top: 5px;
-  width: 100%;
-  font-size: 12px;
+  width: 85%;
+  font-size: 14px;
+
+
     & .criteria{
-      width: 50%;
       float: left;
-      margin: 0;
-      margin-right: 15px;
+      text-transform: uppercase;
+      margin-right: 20%;
+
+      &label select option{
+        text-transform: uppercase;
+      }
     }
     & .eval{
       float: left;
-      width: 45%;
-      margin: 0;
+      text-transform: uppercase;
   }
     .weight{
       float: left;
@@ -132,25 +124,34 @@ body{
     }
 }
 
+
 .partOne{
+  width: 40%;
   float: left;
+  margin-left: 10px;
 }
 
 .partTwo{
+  width: 40%;
   float: right;
+  margin-right: 20px;
 }
 
 .buttons {
   float: left;
   position: absolute;
   margin-top:5px;
-  padding: 5px;
+  margin-left:5px;
+  margin-right: 5px;
+  padding: 10px;
+  padding-left: 40px;
   box-shadow: @smallShadow;
-  &.btn{
-    margin: 15px !important;
-    float: left;
+  &.type label{
+    float: right;
+    margin-left: 20px;
 
   }
+
 }
 .main-menu{
   background-color: lighten(@secondColor,5%);
@@ -235,6 +236,38 @@ article {
     min-width: 600px;
     overflow: hidden;
   }
+
+  //////////////
+  .block{
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom: 10px;
+    border: 3px solid darken(@firstColor,20%);
+    box-shadow: @bigShadow;
+    border-radius: 6px;
+    float: left;
+    padding: 3px;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 100%;
+    font-size: 14px;
+    & .criteria{
+      width: 50%;
+      float: left;
+      margin: 0;
+      margin-right: 15px;
+    }
+    & .eval{
+      float: left;
+      width: 45%;
+      margin: 0;
+    }
+    .weight{
+      float: left;
+      margin-top: 0;
+    }
+  }
+/////////////
 
   article {
     background-color: red;

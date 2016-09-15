@@ -6,15 +6,101 @@
 </head>
 <body>
 
+<select name="ball" style='text-transform:uppercase' class="form-control">
+    <option value=""></option>
+</select>
+
+<label class="radio"><input name="type" checked type="radio" value="1">Man</label>
+<label class="radio"><input name="type" type="radio" value="2">Woman</label>
+<label class="radio"><input name="type" type="radio" value="3">Hotel</label>
+<label class="radio"><input name="type" type="radio" value="4">Car</label>
+
+
+
 <div class="art">
 
 </div>
 
 
-<script src="js/jquery.js"></script>
 
+<script src="vendor/jquery.js"></script>
 <script>
-    $('.art').load('index.html button')
+    (function($, undefined) {
+
+
+        $.getJSON('package.json', function(data) {
+            var items = [];
+            var obj = {};
+            obj = data;
+
+            $("input[name=type]").on('change', function(){
+                $('select[name=ball]').empty();
+
+                if($(this).val() == "1"){
+                    var obj1 = obj["man"];
+                    $.each(obj1, function (key, value) {
+
+                        $('select[name=ball]').append($("<option/>", {
+                            value: key,
+                            text: value
+                        }));
+                    })
+                };
+
+                if($(this).val() == "2"){
+                    var obj1 = obj["woman"];
+                    $.each(obj1, function (key, value) {
+                        $('select[name=ball]').append($("<option/>", {
+                            value: key,
+                            text: value
+                        }));
+                    })
+                };
+
+                if($(this).val() == "3"){
+                    var obj1 = obj["hotel"];
+                    $.each(obj1, function (key, value) {
+                        $('select[name=ball]').append($("<option/>", {
+                            value: key,
+                            text: value
+                        }));
+                    })
+                };
+
+                if($(this).val() == "4"){
+                    var obj1 = obj["car"];
+                    $.each(obj1, function (key, value) {
+                        $('select[name=ball]').append($("<option/>", {
+                            value: key,
+                            text: value
+                        }));
+                    })
+                };
+
+
+
+            });
+
+
+
+
+
+
+
+//
+//            $.each(data, function(key, val){
+//                items.push(val);
+//
+//                });
+//                arr1=items[0];
+//                arr2=items[1];
+//            console.log(arr1, arr2);
+        })
+
+
+
+
+    })(jQuery);
 </script>
 
 </body>
