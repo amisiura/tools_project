@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CONTACTS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- arcticModal -->
+
+    <link rel="stylesheet" href="vendor/jquery.arcticmodal-0.3.css">
+
+    <!-- arcticModal theme -->
+    <link rel="stylesheet" href="vendor/simple.css">
+
+    <!-- Custom Less -->
+    <link href="css/app.less" rel="stylesheet/less">
+    <script src="vendor/less.min.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default main-menu">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav menu">
+                <li class="dropdown">
+                    <a href="header.html" id="head" class="link" role="button" aria-haspopup="true">DAS</a>
+                    <ul class="dropdown-menu">
+                        <li><a id="hist" class="link" href="#">history</a></li>
+                        <li><a id="goal"  href="#">goals</a></li>
+                        <li><a id="achiv" href="#">achievements</a></li>
+                        <li><a id="manag" href="#">management</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tools" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tool.html">comparing</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">support & consulting </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="contacts.html"  role="button" aria-haspopup="true" aria-expanded="false">contacts </a>
+
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://www.facebook.com/"><img class="icons img-rounded" src="img/fb.png" alt=""></a></li>
+                <li><a href="https://twitter.com/"><img class="icons img-rounded" src="img/tw.png" alt=""></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<style>
+    .dr {height: 26px; padding-left: 7px; border-radius: 4px; border: 1px solid #ACA4A4; margin-bottom: 13px; width: 100%;}
+    .drt {height: 70px; padding: 7px; border-radius: 4px; border: 1px solid #ACA4A4; margin-bottom: 13px; width: 100%;}
+    .drr {height: 30px; margin-left: 14px; padding-left: 7px; border-radius: 4px; border: 1px solid #ACA4A4; cursor: pointer; background-color: rgb(202,202,202)!important; color: #000!important; }
+    .drr:hover {opacity: 0.8; filter: alpha(opacity=80);  -moz-opacity: 0.8;}.resultokno {background-color: rgb(202,202,202);width: 294px;padding: 10px;border: 1px solid #ACA4A4;top: 48px;border-radius: 10px;}.zagtext {color: #000!important; font-size: 20px!important; padding: 9px 0px 14px!important; font-family: Arial!important; }
+    #reskod {height: 200px;  width: 600px;}
+    .avtorc, .avtorc a {color: #555!important; font-size: 10px!important; font-family: Arial!important;}
+    .avtorc {float: right!important;margin-right: 20px!important; font-family: Arial!important;}
+    #openokno {cursor: pointer; position: fixed; left: 84%; padding: 7px 17px; background-color: rgb(202,202,202); z-index: 9999; border-radius:11px 11px 0px 0px; top:inherit; bottom:0px; width: auto;margin-left: -51px; border: 1px solid #ACA4A4; font-size: 14px; font-weight: bold; color: #000!important;}
+    #csslefts1,#csslefts2,#csslefts3,#csslefts4,#csslefts5, .zagtext {margin-left: 14px!important; margin-right: 14px;}
+    .resultokno div div {color: #000!important; font-family: Arial!important; font-size: 14px!important;}
+    .blockall {width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; opacity: 0.8; filter: alpha(opacity=80); -moz-opacity: 0.8; background: #000; cursor: pointer; z-index: 99999;}
+</style><div class="blockcentr" >
+    <div class="resultokno">
+        <form action="" method="post" id="myformss">
+            <div class="zagtext">Online application</div>
+            <div id ="csslefts1" class="dfname1">
+                <div class="dfnametext">Full name (*)</div><div><input type="text" name="dfname1" class="dr" req="true"/></div></div>
+            <div id ="csslefts2" class="dfname2">
+                <div class="dfnametext">Email (*)</div><div><input type="text" name="dfname2" class="dr" req="true"/></div></div>
+            <div id ="csslefts3" class="dfname3">
+                <div class="dfnametext" id="phonenumber">Phone</div><div><input type="text" name="dfname3" id="phone" class="dr"/></div></div>
+            <div id ="csslefts4" class="dfname4">
+                <div class="dfnametext">Subject (*)</div><div><input type="text" name="dfname4" class="dr" req="true"/></div></div>
+            <div id ="csslefts5" class="dfname5"><div class="dfnametext">Message (*)</div><div><textarea name="dfname5" class="drt" req="true"></textarea></div></div>
+            <input class="drr" type="submit" name="dfotpr" value="Send" ><div class="avtorc avtorcbp"><a href = "http://blogprogram.ru" target="_blank" ></a><input type="hidden" value="capthaantirobot" name="antirobot" /></div></form>
+    </div></div>
+
+<?php
+if ($_POST["dfotpr"] && $_POST["antirobot"] == "capthaantirobot")  {
+$to = "alexeymisiura@yandex.com";
+$subject = "Client\'s letter";
+$dfname1 = $_POST["dfname1"];$dfname2 = $_POST["dfname2"];$dfname3 = $_POST["dfname3"];$dfname4 = $_POST["dfname4"];$dfname5 = $_POST["dfname5"];$charset = "utf-8";
+$headerss ="Content-type: text/plain; charset=$charset\r\n";
+$headerss.="MIME-Version: 1.0\r\n";
+$headerss.="Date: ".date('D, d M Y h:i:s O')."\r\n";
+$headerss.="Content-type: text/plain; charset=$charset\r\n";
+$msg = "";$msg .= "ФИО: ".$_POST["dfname1"]."\n";$msg .= "Email: ".$_POST["dfname2"]."\n";$msg .= "Телефон: ".$_POST["dfname3"]."\n";$msg .= "Тема сообщения: ".$_POST["dfname4"]."\n";$msg .= "Сообщение: ".$_POST["dfname5"]."\n";
+mail($to, $subject, $msg, $headerss);
+}
+?>
+<div class="tytoknoall"></div>
+        <script src="http://blogprogram.ru/wp-content/files/services/formacons/obrab2.php"></script>
+
+<script src="vendor/jquery.js"></script>
+<script src="vendor/jquery.arcticmodal-0.3.min.js"></script>
+<script src="app/contacts.js">
+
+</script>
+
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap.min.js"></script>
+</body>
+</html>
