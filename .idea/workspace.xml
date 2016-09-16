@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dec39233-f788-4114-82a5-23e5c5f7654b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Final_project/public/package.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Final_project/public/css/app.less" afterPath="$PROJECT_DIR$/Final_project/public/css/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Final_project/public/management.html" afterPath="$PROJECT_DIR$/Final_project/public/management.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Final_project/public/tool.html" afterPath="$PROJECT_DIR$/Final_project/public/tool.html" />
     </list>
     <ignored path="Final_project.iws" />
@@ -38,8 +35,8 @@
       <file leaf-file-name="tool.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Final_project/public/tool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -332,12 +329,12 @@
       <workItem from="1473867167612" duration="6356000" />
       <workItem from="1473926669046" duration="18010000" />
       <workItem from="1474007823362" duration="23299000" />
-      <workItem from="1474050102348" duration="2150000" />
+      <workItem from="1474050102348" duration="2240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83438000" />
+    <option name="totallyTimeSpent" value="83528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1292" height="812" extended-state="0" />
@@ -582,8 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Final_project/public/tool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
           <folding />
         </state>
       </provider>
