@@ -161,7 +161,10 @@ body{
   &.type label{
     float: right;
     margin-left: 20px;
-
+  }
+  &.subButtons{
+    margin: 5px;
+    padding: 5px;
   }
 
 }
@@ -203,6 +206,10 @@ article {
   text-transform: uppercase;
 }
 
+.navbar-default .navbar-nav  li a:active {
+  color: red;
+}
+
 .navbar-default .navbar-nav li ul{
   border-radius: 10px;
   background-color: lighten(@secondColor,16%);
@@ -213,9 +220,6 @@ article {
   margin-top: 10px;
 }
 
-#goals, #hisotry{
-  display: none;
-}
 
 .icons{
   opacity: 0.65;
@@ -294,6 +298,18 @@ article {
     font-size: 13px;
     background-color: desaturate(@firstColor, 10%);
   }
+
+  .stalin, .winnie, .liza{
+    overflow: hidden;
+    width: 30%;
+
+    & blockquote{
+      font-size: 18px;
+      text-align: justify;
+      text-transform: uppercase;
+    }
+  }
+
   @keyframes fsz {
     0% {font-size: 8px;
       opacity: 0.1;}

@@ -61,6 +61,70 @@
 
 
 <div class="container-fluid">
+
+
+    <nav class="navbar navbar-default main-menu">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav menu">
+                    <li class="dropdown">
+                        <a href="header.html" id="head" class="link" role="button" aria-haspopup="true">DAS</a>
+                        <ul class="dropdown-menu">
+                            <li><a id="hist" class="link" href="#">history</a></li>
+                            <li><a id="goal"  href="#">goals</a></li>
+                            <li><a id="achiv" href="#">achievements</a></li>
+                            <li><a id="manag" href="#">management</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tools" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tool.html">comparing</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">support & consulting </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Consulting</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"  role="button" aria-haspopup="true" aria-expanded="false">contacts </a>
+
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="fac"><img class="icons img-rounded" src="img/fb.png" alt=""></a></li>
+                    <li><a href=""><img class="icons img-rounded" src="img/tw.png" alt=""></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+
     <div class="row">
         <div class="main partOne col-xs-4 col-lg-5">
             <div class="block">
@@ -76,7 +140,7 @@
 
                 <div class="eval">
                     <label>Your evaluation:
-                        <select name="ball" style='text-transform:uppercase' class="form-control">
+                        <select name="ball" class="form-control">
                             <option value="5">Perfect</option>
                             <option value="4">Very good</option>
                             <option value="3">Good enough</option>
@@ -111,10 +175,15 @@
                 <label class="radio"><input name="type" type="radio" value="4">Car</label>
 
             </div>
-            <div class="subButtons">
-                <button class="btn btn-success btn-small" id="btn1">+</button>
-                <button class="btn btn-danger btn-small" id="btn2">-</button>
-                <button class="btn btn-primary btn-small" id="btn3">Add object</button>
+            <div class="subButtons form-group">
+                <button type="button" class="btn btn-success btn-small" id="btn1">+</button>
+                <button type="button" class="btn btn-danger btn-small" id="btn2">-</button>
+            </div>
+            <div class="subButtons form-group">
+                <button type="button" class="btn btn-primary btn-small" id="btn3">Add object</button>
+            </div>
+             <div class="subButtons form-group">
+                <button type="button" class="btn btn-info btn-small" id="btn4">Calc</button>
             </div>
         </div>
 
@@ -141,146 +210,198 @@
         (function($, undefined) {
 
 
+                    $( document ).ready(function() {
+
+                        $('.menu > li').hover(function () {
+
+                                    clearTimeout($.data(this, 'timer'));
+
+                                    $('ul', this).stop(true, true).slideDown(400);
+
+                                },
+                                function () {
+
+                                    $.data(this, 'timer', setTimeout($.proxy(function () {
+                                        $('ul', this).stop(true, true).slideUp(400);
+                                    }, this), 100));
+
+                                }
+                        )
 
 
-
-                    $( document ).ready(function()
-                        {
-                         //   $('#myModal').modal();
-                        }
-                )
-
-                $("#btn1").on('click',function () {
+/////////////////
+                        $("#btn1").on('click', function () {
 
 
-                    if ($('.partOne .block').length<5) {
+                            if ($('.partOne .block').length < 5) {
 
-                        var $b = $('.partOne .block')
-                                .last()
-                                .clone()
-                                .addClass('block' + ($('.block').length-1));
+                                var $b = $('.partOne .block')
+                                        .last()
+                                        .clone()
+                                        .addClass('block' + ($('.block').length - 1));
 
-                        var $r=$b
-                                .find('.radio-inline>input')
-                                .attr("name",'weight' + ($('.block').length-1));
-
-
-                        $b.find('.radio-inline>input').replaceWith($r);
-                        $b.appendTo('.partOne');
-                    }
-
-                    })
-
-            $("#btn2").on('click',function () {
-                if ($('.partOne .block').length>1) {
-                    $('.partOne .block:last').remove();
-                    $('.partTwo .block:last').remove();
-
-                }
-
-            })
+                                var $r = $b
+                                        .find('.radio-inline>input')
+                                        .attr("name", 'weight' + ($('.block').length - 1));
 
 
-            $("#btn3").on('click',function () {
+                                $b.find('.radio-inline>input').replaceWith($r);
+                                $b.appendTo('.partOne');
+                            }
 
-                if ($('.partTwo').length==1)
-                    {
-                        $('.partTwo').remove();
-                        //$('.main:last').remove();
-
-                    }
-                    if ($('.main').length<2) {
-
-                        var $p = $('.main')
-                                .clone()
-                                .removeClass('partOne')
-                                .addClass('partTwo main col-xs-4 col-lg-5');
-
-                         $p
-                                 .find('.block .radio-inline>input').each(function (i, elem) {
-                             var n = 0;
-                             if (i < 3)
-                             {n=0}
-                             else if (i<6)
-                             {n=1}
-                             else if (i<9)
-                             {n=2}
-                             else if (i<12)
-                             {n=3}
-
-
-                                $(this).attr("name","weight" + 2+n);
-
-
-                        //$p.find('.radio-inline>input').replaceWith($rr);
-
-                        $p.appendTo('.row');
-                         })
-                    }
-
-            })
-
-
-            $.getJSON('package.json', function(data) {
-                var items = [];
-                var obj = {};
-                obj = data;
-
-
-                $("input[name=type]").on('change', function(){
-                    $('select[name=crit]').empty();
-
-                    if($(this).val() == "1"){
-                        var obj1 = obj[Object.keys(data)[0]];
-                        $.each(obj1, function (key, value) {
-
-                            $('select[name=crit]').append($("<option/>", {
-                                value: key,
-                                text: value
-                            }));
                         })
-                    };
+////////////
+                        $("#btn2").on('click', function () {
+                            if ($('.partOne .block').length > 1) {
+                                $('.partOne .block:last').remove();
+                                $('.partTwo .block:last').remove();
 
-                    if($(this).val() == "2"){
-                        var obj1 = obj[Object.keys(data)[1]];
-                        $.each(obj1, function (key, value) {
-                            $('select[name=crit]').append($("<option/>", {
-                                value: key,
-                                text: value
-                            }));
+                            }
+
                         })
-                    };
 
-                    if($(this).val() == "3"){
-                        var obj1 = obj[Object.keys(data)[2]];
-                        $.each(obj1, function (key, value) {
-                            $('select[name=crit]').append($("<option/>", {
-                                value: key,
-                                text: value
-                            }));
+                        /////////
+                        $("#btn3").on('click', function () {
+
+                            if ($('.partTwo').length == 1) {
+                                $('.partTwo').remove();
+                                //$('.main:last').remove();
+
+                            }
+                            if ($('.main').length < 2) {
+
+                                var $p = $('.main')
+                                        .clone()
+                                        .removeClass('partOne')
+                                        .addClass('partTwo main col-xs-4 col-lg-5');
+
+                                $p
+                                        .find('.block .radio-inline>input').each(function (i, elem) {
+                                    var n = 0;
+                                    if (i < 3) {
+                                        n = 0
+                                    }
+                                    else if (i < 6) {
+                                        n = 1
+                                    }
+                                    else if (i < 9) {
+                                        n = 2
+                                    }
+                                    else if (i < 12) {
+                                        n = 3
+                                    }
+
+
+                                    $(this).attr("name", "weight" + 2 + n);
+
+
+                                    //$p.find('.radio-inline>input').replaceWith($rr);
+
+                                    $p.appendTo('.row');
+                                })
+                            }
                         })
-                    };
+/////////////
 
-                    if($(this).val() == "4"){
+                        $.getJSON('package.json', function (data) {
+                            var items = [];
+                            var obj = {};
+                            obj = data;
 
-                        var obj1 = obj[Object.keys(data)[3]];
-                        $.each(obj1, function (key, value) {
-                            $('select[name=crit]').append($("<option/>", {
-                                value: key,
-                                text: value
-                            }));
+
+                            $("input[name=type]").on('change', function () {
+                                $('select[name=crit]').empty();
+
+                                if ($(this).val() == "1") {
+                                    var obj1 = obj[Object.keys(data)[0]];
+                                    $.each(obj1, function (key, value) {
+
+                                        $('select[name=crit]').append($("<option/>", {
+                                            value: key,
+                                            text: value
+                                        }));
+                                    })
+                                }
+                                ;
+
+                                if ($(this).val() == "2") {
+                                    var obj1 = obj[Object.keys(data)[1]];
+                                    $.each(obj1, function (key, value) {
+                                        $('select[name=crit]').append($("<option/>", {
+                                            value: key,
+                                            text: value
+                                        }));
+                                    })
+                                }
+                                ;
+
+                                if ($(this).val() == "3") {
+                                    var obj1 = obj[Object.keys(data)[2]];
+                                    $.each(obj1, function (key, value) {
+                                        $('select[name=crit]').append($("<option/>", {
+                                            value: key,
+                                            text: value
+                                        }));
+                                    })
+                                }
+                                ;
+
+                                if ($(this).val() == "4") {
+
+                                    var obj1 = obj[Object.keys(data)[3]];
+                                    $.each(obj1, function (key, value) {
+                                        $('select[name=crit]').append($("<option/>", {
+                                            value: key,
+                                            text: value
+                                        }));
+                                    })
+                                }
+                                ;
+
+
+                            });
                         })
-                    };
+
+                        var ball =0;
+                        var weight=0;
+
+                        ;
+
+                        $("#btn4").on('click', function () {
+                         var s1 =0;
+                         var s2=0;
+                         var r1=0;
+                         var r2=0;
+                         var l=$('.partOne .block').length;
+                            for (i=0;i<l;i++)
+                            {
+                                var w1 =$('.partOne .block:eq('+i+') input[type="radio"]:checked').val();
+                                var b1 =$('.partOne .block:eq('+i+') select[name=ball]').val();
+                                r1=b1*w1;
+
+                                s1+=r1;
+                            }
+
+                            for (i=0;i<l;i++)
+                            {
+                                var w2 =$('.partTwo .block:eq('+i+') input[type="radio"]:checked').val();
+                                var b2 =$('.partTwo .block:eq('+i+') select[name=ball]').val();
+                                r2=b2*w2;
+
+                                s2+=r2;
+                            }
+
+                            console.log(s1, s2);
 
 
 
 
+                        })
 
 
-                });
 
-            })
 
+                        })
 
 
 

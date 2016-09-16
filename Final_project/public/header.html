@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav menu">
                     <li class="dropdown">
-                        <a href="#" id="head" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DAS</a>
+                        <a href="header.html" id="head" class="link" role="button" aria-haspopup="true">DAS</a>
                         <ul class="dropdown-menu">
                             <li><a id="hist" class="link" href="#">history</a></li>
                             <li><a id="goal"  href="#">goals</a></li>
@@ -48,7 +48,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tools" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">comparing</a></li>
+                            <li><a href="tool.html">comparing</a></li>
 
                         </ul>
                     </li>
@@ -69,8 +69,8 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="fac"><img class="icons img-rounded" src="img/fb.png" alt=""></a></li>
-                    <li><a href=""><img class="icons img-rounded" src="img/tw.png" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/"><img class="icons img-rounded" src="img/fb.png" alt=""></a></li>
+                    <li><a href="https://twitter.com/"><img class="icons img-rounded" src="img/tw.png" alt=""></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -196,8 +196,7 @@
             $('article').hide();
 
             var $d = $('<div/>').addClass('new').appendTo('body');
-         //   $d.css(position:absolute);
-            $d.load('management.html');
+            $d.load('management.html .container-fluid');
 
             return false;
         });
