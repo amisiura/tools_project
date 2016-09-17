@@ -193,7 +193,7 @@
             }
 
             if(+result<0.9){
-                textResult='...The items are almost the same';
+                textResult='...the items are almost the same';
             }
             if(+result<1.1){
                 textResult='...the first item is slightly better'
