@@ -189,16 +189,20 @@
             var textResult='';
 
             if(result<0.7){
-                textResult='......the second item is much better ';
+                textResult='......o-oops, the second item is much better ';
             }
 
-            if(+result<0.9){
-                textResult='...the items are almost the same';
+            if(result<0.9){
+                textResult='... oh, the items are almost the same';
             }
-            if(+result<1.1){
-                textResult='...the first item is slightly better'
+            if(result<1.1){
+                textResult='...it means the first item is slightly better'
             }
-            if(+result<1.3) {textResult='... the first item is much better than second'}
+            if(result<1.3){
+                textResult="...i'm sure the first item is better"
+            }
+
+            if(result>1.3) {textResult='... the first item is much better than second'}
 
             $(function(){
                 $('#exampleModal').arcticmodal();
